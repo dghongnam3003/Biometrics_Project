@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from skimage.feature import local_binary_pattern
 
 MIN_SIZE = 75
 MARGIN = 30
@@ -67,4 +68,8 @@ def extract_face(PATH:str = None, img = None):
         
         return (1, gray_img[fy-MARGIN:fy+fh+MARGIN, fx-MARGIN:fx+fw+MARGIN], face_box)
         # cv2.imwrite('output.jpg', img[fy:fy+fh, fx:fx+fw])
+        
+        # gray_img_pre = gray_img[fy-MARGIN:fy+fh+MARGIN, fx-MARGIN:fx+fw+MARGIN]
+        # lbp_img = local_binary_pattern(gray_img_pre, 8, 1, method='default')
+        # return (1, lbp_img, face_box)
 

@@ -441,7 +441,7 @@ def ReviewScreen():
         else:
             fMy.tkraise()
             messagebox.showinfo("Success", "User updated successfully!")
-        face_train.train()
+        face_train.train(username)
         frame.destroy()
     save_btn = Button(frame, text="Save ", font=(MAIN_FONT, 14), fg='darkgreen', image=icAdd, bg="white", bd=0, cursor="hand2", compound="right", command=Save)
     if total_temp == 0:
